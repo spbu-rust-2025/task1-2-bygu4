@@ -15,7 +15,7 @@ fn main() {
         match io::stdin().read_line(&mut buf) {
             Ok(_) => match buf.as_str().trim().parse::<i32>() {
                 Ok(-1) => break,
-                Ok(num) if num > 0 => acc = add(acc, num),
+                Ok(num) if num >= 0 => acc = add(acc, num),
                 _ => acc = None,
             },
             _ => acc = None,
